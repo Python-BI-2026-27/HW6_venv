@@ -127,4 +127,4 @@ Expected output in case of correct setup:
 
 Finished pain.py. Time for pain IRL.
 
-![Rest in the gym](images/rest_in_the_gym.jpeg)
+![Rest in the gym](Images/rest_in_the_gym.jpeg)
