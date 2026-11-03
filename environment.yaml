@@ -1,0 +1,13 @@
+name: pain
+channels:
+  - conda-forge
+dependencies:
+  - python=3.14
+  - pip
+  - pip:
+      - numpy==2.5.4                      # pulled by pandas; pinned for reproducibility
+      - pandas==2.3.3                     # pain.py:32,43,46
+      - pyarrow==26.0.0                   # pain.py:43  backend for dtype="float32[pyarrow]"
+      - biopython==1.88                   # pain.py:36,40,41 (SubsMat restored in README step 3)
+      - protobuf==7.36.2                  # pain.py:33  fills the google/ namespace pkg
+      - opencv-python-headless==5.0.0.93  # pain.py:34  headless => no libGL on Ubuntu
