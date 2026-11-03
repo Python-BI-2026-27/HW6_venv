@@ -1,0 +1,11 @@
+*
+
+
+!.gitignore
+!README.md
+!environment.yaml
+!compart_fix.py
+!pain.py
+
+!img/
+!img/**
