@@ -6,11 +6,12 @@ Instructions on how to run the unchanged `pain.py` script by installing dependen
 
 Tested on:
 
+- MacBook Air M4 (Apple Silicon, arm64)
 - macOS 26.7.1
 - Python 3.14.10
 - clean `conda` environment (`conda 26.9.4`)
 
-`Conda` must already be installed! Use `conda 26.9.4` or later versions. Python packages are installed using `pip`.
+`Conda` must already be installed! Python packages are installed using `pip`.
 
 Run the commands below in a `bash` or `zsh` terminal. Keep the homework environment activated during the setup.
 
@@ -115,3 +116,15 @@ Expected output in case of correct setup:
 ```text
 ✨❤ Всё работает, ты больш(ой/ая) молодец!!! ✨❤
 ```
+
+## Notes and additional explanations
+
+- This setup uses `Biopython 1.88` with `Bio.SubsMat` restored from `Biopython 1.79`. Installing `Biopython 1.79` directly failed because in `Python 3.14` it could not be compiled on my system. `Python 3.14` is needed because the script imports `annotationlib`, which was added to the standard library in this version.
+
+- The `pandas` modification is required because the homework does not allow changes to `pain.py`. In a real work, I would instead change the script to pass a list as the dataframe index.
+
+## Rest
+
+Finished pain.py. Time for pain IRL.
+
+![Rest in the gym](images/rest_in_the_gym.jpeg)
