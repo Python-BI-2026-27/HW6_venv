@@ -37,3 +37,15 @@ python -c "import site; print(site.getsitepackages()[0])"
 For example: `python ~/bioinf/Python/HW_6_venv). If everything OK, you will see that you are cool =)
 
 
+Phew, now for the whole point of all this: REST.
+I had a long break last week (so it’s a huge relief that you moved the deadline!). I was in Canada, 
+looking at mountains, rivers, and deer. I bought a new Starbucks mug for my collection 
+(though it’s a shame the collections change so often now and my shelf has started to look rather garish).
+
+
+![1](photos/1.jpg)  
+![2](photos/2.jpg)  
+![3](photos/3.jpg)  
+![4](photos/4.jpg)
+
+
