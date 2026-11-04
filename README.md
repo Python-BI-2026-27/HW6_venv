@@ -146,8 +146,12 @@ pixi run python pain.py
 ## Part 2: Rest & Recreation Proof 🌿
 
 > **How I rested this week:**
-- ![Ловила белок](photos/belka.jpg)
-- ![Чилила с котом](photos/kot.jpg)
-- ![Чухала кошку](photos/kot.jpg)
-- ![Жевала пятнистый арбуз](photos/watermelon.jpg)
+- Ловила белок
+![Ловила белок](photos/belka.jpg)
+- Чилила с котом
+![Чилила с котом](photos/kot.jpg)
+- Чухала кошку
+![Чухала кошку](photos/koshka.jpg)
+- Жевала пятнистый арбуз
+![Жевала пятнистый арбуз](photos/watermelon.jpg)
 
