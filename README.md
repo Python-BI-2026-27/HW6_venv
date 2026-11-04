@@ -1,85 +1,91 @@
 # HW 6. Virtual environments
-## Часть 1.
-Код запускался в Ubuntu 26.04 LTS в среде WSL 2 под Windows 11. Версия Python — 3.15.2.
+## Part 1.
+The code was run on Ubuntu 26.04 LTS in WSL 2 under Windows 11. Python version: 3.15.2.
 
-Не знаю, насколько с начала нужно начинать, начинаю с самого начала с предположением о том, что на устройстве уже установлена mamba. Все команды набираются в терминале.
+I'm not sure how far back I should start, so I'll start from the very beginning, assuming that mamba is already installed on your machine. Enter all commands in the terminal.
 
-1. Склонируйте репозиторий к себе на устройство по SSH (Use a password-protected SSH key):
+1. Clone the repository to your machine via SSH (use a password-protected SSH key):
 
 `git clone git@github.com:mrsnightkin/HW6_venv.git`
 
-2. Перейдите в папку проекта HW6_venv, где лежит сам скрипт pain.py и файл environment.yaml (переходите из той папки, в которую изначально клонировали репозиторий)
+2. Navigate to the HW6_venv project folder, which contains the pain.py script and the environment.yaml file (run this from the directory where you cloned the repository).
 
 `cd ./HW6_venv`
 
-3. Создайте виртуальное окружение в mamba c именем HW_env (можно изменить имя при необходимости) и добавьте туда все необходимые пакеты из файла environment.yaml:
+3. Create a virtual environment in mamba named HW_env (you can change the name if necessary) and install all the required packages from environment.yaml:
 
-`mamba create -n HW_env -f environment.yaml` 
+`mamba create -n HW_env -f environment.yaml`
 
-3.1. (Нужно подтвердить изменения, набрав y и нажав Enter)
+3.1. (Confirm the changes by typing y and pressing Enter.)
 
-4. После успешной загрузки необходимо активировать окружение:
+4. Once the installation is complete, activate the environment:
 
 `mamba activate HW_env`
 
-Так как необходимый нам пакет Bio.SubsMat есть только в старой версии biopython, которая не совместима с новыми версиями python (мы не можем понизить версию python из-за другой библиотеки), мы перенесем необходимый пакет в текущую версию biopython. 
+Since the Bio.SubsMat package we need is only available in an older version of Biopython, which is incompatible with newer Python versions (and we cannot downgrade Python because of another library), we will copy the required package into the current Biopython installation.
 
-5. Скачайте архив .tar.gz со старой версией (biopython-1.79):
+5. Download the .tar.gz archive of the older version (biopython-1.79):
 
 `wget https://biopython.org/DIST/biopython-1.79.tar.gz`
 
-6. Извлеките из архива только нужный пакет SubsMat:
+6. Extract only the SubsMat package from the archive:
 
 `tar -xzf biopython-1.79.tar.gz biopython-1.79/Bio/SubsMat`
 
-7. Выполняем короткий код на python, чтобы извлечь путь до текущего места хранения biopython внутри виртуального окружения (импортируем biopython и выводим путь к папкам этого пакета, записывая его в переменную)
+7. Run a short Python command to find where Biopython is installed inside the virtual environment (import Biopython, print the path to its package directory, and store the output in a variable).
 
 `bio_dir=$(python -c "import Bio; print(Bio.__path__[0])")`
 
-8. Копируем всю папку SubsMat (со всеми вложенными папками) по относительному пути из текущей директории в основную папку с biopython в нашем виртуальном окружении
+8. Copy the entire SubsMat folder (including all subfolders), using its path relative to the current directory, into the main Biopython folder in our virtual environment.
 
 `cp -r biopython-1.79/Bio/SubsMat "$bio_dir/"`
 
-8.1 *Можно удалить архив и папку, чтобы не мешались (необязательный шаг):*
+8.1 *You can delete the archive and the extracted folder to keep things tidy (optional):*
 
-*rm biopython-1.79.tar.gz*
+`rm biopython-1.79.tar.gz`
 
-*rm -r biopython-1.79*
+`rm -r biopython-1.79`
 
-Теперь нужно справиться с тем, что в строке pd.DataFrame([1, 2, 3, 4], index={1, 2, 3, 4}) скрипт передает индексы как множество, а pandas такое непанимат, нам нужно сделать, чтобы панимат
+Now we need to deal with the line pd.DataFrame([1, 2, 3, 4], index={1, 2, 3, 4}): the script passes the index as a set, but pandas doesn't get it, so we need to make it get it.
 
-9. Для этого мы опять выполняем короткий код на python, записывая в переменную путь к скрипту библиотеки pandas, где хранятся правила работы с датафреймами в pandas. 
+9. Run another short Python command to store the path to the pandas source file that handles DataFrames in a variable.
 
 `frame_file=$(python -c "import pandas.core.frame; print(pandas.core.frame.__file__)")`
 
-9.1. *Делаем бэкап на всякий случай (в целом необязательно, но если все сломается, то я не виновата)*
+9.1. Before editing pandas, create a backup of the original file.
 
 `cp "$frame_file" "$frame_file.bak"`
 
-10. Открываем файл в редакторе nano
+10. Open the file in the nano editor.
 
 `nano "$frame_file"`
 
-Откроется скрипт
+The source file will open.
 
-При нажатии Ctrl+W откроется строка поиска, в которой нужно набрать
-`raise ValueError("index cannot be a set")` и нажать Enter, чтобы найти эту строку в скрипте.
+Press Ctrl+W to open the search prompt, type
+`raise ValueError("index cannot be a set")`, and press Enter to find this line in the file.
 
-Нужно стереть эту строку и вместо нее написать `index = list(index)` (теперь мы его заставим принимать индексы как множества хехе).
-**Очень важно сохранять все отступы.**
+Delete this line and replace it with `index = list(index)` (now we'll make it accept sets as indices, hehe).
+**It is very important to preserve the indentation.**
 
-Затем сохраните с помощью Ctrl+O, Enter и выйдите из nano с помощью Ctrl+X
+Then save with Ctrl+O, Enter, and exit nano with Ctrl+X.
 
-После можно запускать скрипт:
+You can now run the script:
 
 `python pain.py`
 
-Ура! Победа! Надеюсь, у Вас тоже по моей инструкции все получилось
+Hooray! Victory! I hope these instructions worked for you too.
 
-## Часть 2.
+PS: Before removing or recreating the environment, restore the original pandas file. Manual changes can also affect future environments (This happened to me, and I experienced pain). Run these commands while the environment is still active.
 
-Я очень хорошо отдохнула за эту неделю чилла, прям глоток воздуха впервые за два месяца. Я много гуляла и два раза сходила в спортзал, ела хинкали, играла в Скайрим, сняла Хэллоуинский рилс с коллегами. Пруфы прилагаю
-![Гуляла](Oka_river.jpg)
-![Хинкали](celebrating_Tuesday.jpg)
-![Кадр из рилса](lab_ghost.jpg)
-![После битвы за Вайтран](My_invincible_team.png)
+`frame_file=$(python -c "import pandas.core.frame; print(pandas.core.frame.__file__)")`
+
+`cp "$frame_file.bak" "$frame_file"`
+
+## Part 2.
+
+I had a really good rest during this week of chilling out—a breath of fresh air for the first time in two months. I went on lots of walks, hit the gym twice, ate khinkali, played Skyrim, and filmed a Halloween reel with my colleagues. Proof attached!
+![Out for a walk](Oka_river.jpg)
+![Khinkali](celebrating_Tuesday.jpg)
+![A frame from the reel](lab_ghost.jpg)
+![After the Battle for Whiterun](My_invincible_team.png)
