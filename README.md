@@ -1,6 +1,6 @@
 # Reproducibility Pipeline: Joe's Nature Publication (`pain.py`)
 
-This repository provides environment specifications and step-by-step instructions to reproduce the analysis pipeline from without modifying the original script `pain.py`.
+This repository provides environment specifications and step-by-step instructions to reproduce the analysis pipeline from hw6 without modifying the original script `pain.py`.
 
 ## System Specifications
 
