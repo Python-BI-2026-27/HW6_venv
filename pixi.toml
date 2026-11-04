@@ -1,0 +1,15 @@
+[workspace]
+name = "pain-hw6"
+version = "0.1.0"
+description = "Reproducible environment for Joe's Nature code (pain.py)"
+authors = ["Prokopenko AV"]
+channels = ["conda-forge", "bioconda"]
+platforms = ["linux-64"]
+
+[dependencies]
+python = "3.13.*"
+pandas = ">=2.2.0"
+pyarrow = "*"
+opencv = "*"
+protobuf = "*"
+biopython = ">=1.83"
