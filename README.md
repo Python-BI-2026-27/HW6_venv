@@ -43,9 +43,9 @@ looking at mountains, rivers, and deer. I bought a new Starbucks mug for my coll
 (though it’s a shame the collections change so often now and my shelf has started to look rather garish).
 
 
-![1](photos/1.jpg)  
-![2](photos/2.jpg)  
-![3](photos/3.jpg)  
-![4](photos/4.jpg)
+![1](photos/1.JPG)  
+![2](photos/2.JPG)  
+![3](photos/3.JPG)  
+![4](photos/4.JPG)
 
 
