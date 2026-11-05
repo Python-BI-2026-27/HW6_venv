@@ -1,0 +1,14 @@
+name: pain_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - biopython=1.81
+  - numpy<2.0
+  - pyarrow
+  - pip
+  - pip:
+      - pandas>=2.1
+      - opencv-python
+      - google
