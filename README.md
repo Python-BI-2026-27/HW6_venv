@@ -8,7 +8,7 @@ This solution runs pain.py without modifying the script.
 ## 1. Prepare the repository 
 Install Conda or Mamba before starting. Run the commands below from the repository root in a Bash/Zsh terminal.
 
-The repository should contain `pain.py`, `environment.yaml`, and `legacy_dir/Subsmat/`. 
+The repository should contain `pain.py`, `environment.yaml`, and `legacy_dir/SubsMat/`. 
 The `SubsMat` directory must be copied from Bio/SubsMat in the original Biopython 1.79 source distribution.
 
 Source: [Biopython 1.79 release files.](https://pypi.org/project/biopython/1.79/#files)
@@ -22,13 +22,13 @@ channels:
   - conda-forge
 dependencies:
   - python=3.14
-  - pip
-  - pandas
-  - pyarrow
+  - pip=26.2.2
+  - pandas=3.1.1
+  - pyarrow=26.0.1
   - pip:
       - biopython==1.88
-      - opencv-python
-      - google-api-python-client
+      - opencv-python==5.0.0.93
+      - google-api-python-client==2.201.0
 ```
 Create and activate the environment:
 ```Bash
