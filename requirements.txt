@@ -1,0 +1,27 @@
+#to make the program executable, do the following commands on WSL Terminal:
+
+
+
+mamba create -n pain_env -c conda-forge python=3.14 -y
+mamba activate pain_env
+
+
+#Add necessary libraries:
+
+mamba install -y pandas pyarrow
+
+python -m pip install protobuf google-api-python-client opencv-python biopython
+
+#Add a string of code to Biopython to Bio/p__init__.py, which creates a name of Bio.SubsMat and use it for loading updated matrix
+
+echo "import sys; from Bio.Align import substitution_matrices as sm; sys.modules['Bio.SubsMat'] = type('', (), {'MatrixInfo': type('', (), {'blosum62': sm.load('BLOSUM62')})})" >> $(python -c "import Bio; print(Bio.__file__)")
+
+#Disable restriction of a set as index in modern pandas in pandas/core/frame.py (Change if to if else function):
+
+sed -i 's/if isinstance(index, set):/if False:/' $(python -c "import pandas; print(pandas.core.frame.__file__)")
+
+
+#Run the program
+
+python pain.py
+
