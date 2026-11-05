@@ -8,7 +8,7 @@ This solution runs pain.py without modifying the script.
 ## 1. Prepare the repository 
 Install Conda or Mamba before starting. Run the commands below from the repository root in a Bash/Zsh terminal.
 
-The repository should contain `pain.py`, `environment.yaml`, and `legacy_dir/SubsMat/`. 
+The repository should contain `pain.py`, `environment.yaml`, and `legacy_dir/Subsmat/`. 
 The `SubsMat` directory must be copied from Bio/SubsMat in the original Biopython 1.79 source distribution.
 
 Source: [Biopython 1.79 release files.](https://pypi.org/project/biopython/1.79/#files)
@@ -43,9 +43,9 @@ The file lists the main dependencies without Linux-specific system packages or b
 The script imports `Bio.SubsMat.MatrixInfo`, which is restored from Biopython 1.79. Copy the bundled folder into the installed Biopython package:
 
 ```Bash
-cp -R legacy_dir/SubsMat "$CONDA_PREFIX/lib/python3.14/site-packages/Bio/"
+cp -R legacy_dir/Subsmat "$CONDA_PREFIX/lib/python3.14/site-packages/Bio/"
 ```
-Keep Biopython 1.88 installed. Only the missing `SubsMat` directory is added.
+Keep Biopython 1.88 installed. Only the missing `Subsmat` directory is added.
 
 ## 4. Fix pandas indexing 
 Open the installed `frame.py` in a text editor. For example, with Nano:
