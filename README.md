@@ -43,7 +43,7 @@ The file lists the main dependencies without Linux-specific system packages or b
 The script imports `Bio.SubsMat.MatrixInfo`, which is restored from Biopython 1.79. Copy the bundled folder into the installed Biopython package:
 
 ```Bash
-cp -R legacy_dir/Subsmat "$CONDA_PREFIX/lib/python3.14/site-packages/Bio/"
+cp -R legacy_dir/SubsMat "$CONDA_PREFIX/lib/python3.14/site-packages/Bio/"
 ```
 Keep Biopython 1.88 installed. Only the missing `Subsmat` directory is added.
 
