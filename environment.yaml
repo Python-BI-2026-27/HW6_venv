@@ -1,0 +1,17 @@
+name: hw6_venv
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.14.10
+  - pandas=3.1.1
+  - numpy=2.5.4
+  - pyarrow=26.0.0
+  - pip
+  - pip:
+      - biopython==1.88
+      - google-auth==2.62.1
+      - opencv-python-headless==5.0.0.93
+      
