@@ -12,36 +12,35 @@ biopython 1.88
 
 ## Steps
 1. Create the environment:
-```
-   conda env create -f environment.yaml
-```
+
+`conda env create -f environment.yaml`
+
 2. Activate your environment:
-```
-   conda activate pain_env
-```
-3. Restore the `SubsMat` folder from Biopython 1.79 in the new Biopython 1.88 package. Download the 1.79 sources and copy only the pure-Python `SubsMat` folder into the installed Biopython:
-```
-   mkdir -p biopython_src
 
-   pip download biopython==1.79 --no-deps --no-binary :all: -d biopython_src
+`conda activate pain_env`
 
-   tar -xzf biopython_src/biopython-1.79.tar.gz -C biopython_src
+3. Restore the **SubsMat** folder from Biopython 1.79 in the new Biopython 1.88 package. Download the 1.79 sources and copy only the pure-Python **SubsMat** folder into the installed Biopython:
 
-   cp -r biopython_src/biopython-1.79/Bio/SubsMat "$CONDA_PREFIX/lib/python3.14/site-packages/Bio/"
-```
+`mkdir -p biopython_src`
+
+`pip download biopython==1.79 --no-deps --no-binary :all: -d biopython_src`
+
+`tar -xzf biopython_src/biopython-1.79.tar.gz -C biopython_src`
+
+`cp -r biopython_src/biopython-1.79/Bio/SubsMat "$CONDA_PREFIX/lib/python3.14/site-packages/Bio/"`
+
   Optional cleanup (the downloaded sources are no longer needed):
-```
-   rm -r biopython_src
-```
+
+`rm -r biopython_src`
+
 4. Pain.py uses `index={1, 2, 3, 4}`, which is rejected by pandas with "index cannot be a set". Replace that check in the installed pandas with `pass`:
-```
-  sed -i.bak 's/raise ValueError("index cannot be a set")/pass/' "$CONDA_PREFIX/lib/python3.14/site-packages/pandas/core/frame.py"
-```
+
+`sed -i.bak 's/raise ValueError("index cannot be a set")/pass/' "$CONDA_PREFIX/lib/python3.14/site-packages/pandas/core/frame.py"`
+
 
 5. Run the script:
-```
-   python pain.py
 
-```
+`python pain.py`
 
+## Time to relax after this painful journey...
 ![Relaxation proof](rest.jpg)
