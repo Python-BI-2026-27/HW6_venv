@@ -1,6 +1,6 @@
 # HW6
 **How to run *pain.py* without changing the script itself.**
-Tested on Arch Linux x86_64, with Miniforge(Mamba and Python 3.14), with zsh.
+Tested on Arch Linux x86_64, with Miniforge(Mamba and Python 3.14) and zsh.
 The steps also require *wget* and a text editor.
 
 ## 1. Create the environment
@@ -55,3 +55,8 @@ cd -
 ```bash
 python pain.py
 ```
+
+___
+## No rest, no life
+![First rest](rest1.jpg)
+![second rest](rest2.jpg)
