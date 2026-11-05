@@ -37,10 +37,10 @@ conda activate pain
 ```
 Alternatively, use `mamba env create -f environment.yaml` to create it.
 
-The file lists the main dependencies without Linux-specific system packages or built identifiers. Installation on other platforms depends on the availability of these versions. The original setup was run on WSL2 Ubuntu.
+The file lists the main dependencies without Linux-specific system packages or build identifiers. Installation on other platforms depends on the availability of these versions. The original setup was run on WSL2 Ubuntu.
 
 ## 3. Restore Bio.SubsMat
-The script import `Bio.SubsMat.MatrixInfo`, which is restored from Biopython 1.79. Copy the bundled folder into the installed Biopython package:
+The script imports `Bio.SubsMat.MatrixInfo`, which is restored from Biopython 1.79. Copy the bundled folder into the installed Biopython package:
 
 ```Bash
 cp -R legacy_dir/SubsMat "$CONDA_PREFIX/lib/python3.14/site-packages/Bio/"
