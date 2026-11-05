@@ -1,4 +1,4 @@
-# HW6: Virtual environments
+# Part 1. HW6: Virtual environments
 This solution runs pain.py without modifying the script.
 
 **Platform compatibility**: The environment file avoids platform-specific packages and build identifiers and is intended for Linux and macOS. The setup was tested on Ubuntu under WSL2. On Windows, run the commands through WSL2; on Linux and macOS, use Bash/Zsh.
@@ -76,3 +76,9 @@ Expected final output:
 ```text
 ✨❤ Всё работает, ты больш(ой/ая) молодец!!! ✨❤
 ```
+
+# Part 2. Relax
+
+During the holidays I attended project presentations and met some very cool guys from ITMO University. I really liked it!
+
+![Фото встречи (я там есть)](https://github.com/Samsagirl1/HW6_venv/blob/main/img/photo_2026-11-05%2019.44.58.jpeg)
