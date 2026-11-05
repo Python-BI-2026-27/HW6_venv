@@ -1,0 +1,3 @@
+Python version 3.14. 
+`pandas`, `opencv-python`, `biopython`.
+`pyarrow` (version >= 23) 
