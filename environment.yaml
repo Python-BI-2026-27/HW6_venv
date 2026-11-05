@@ -1,0 +1,12 @@
+name: pain
+channels:
+  - conda-forge
+dependencies:
+  - python=3.14
+  - pip=26.2.2
+  - pandas=3.1.1
+  - pyarrow=26.0.1
+  - pip:
+      - biopython==1.88
+      - opencv-python==5.0.0.93
+      - google-api-python-client==2.201.0
