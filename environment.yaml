@@ -1,0 +1,11 @@
+name: pain
+channels:
+  - conda-forge
+dependencies:
+  - python=3.14
+  - pandas=2.3.3
+  - pyarrow
+  - py-opencv
+  - protobuf
+  - biopython=1.88
+  - curl
