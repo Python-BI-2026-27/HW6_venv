@@ -1,0 +1,14 @@
+[1mbiopython[0m==1.86
+[1mcffi[0m==2.1.1
+[1mcryptography[0m==50.0.2
+[1mgoogle-auth[0m==2.62.1
+[1mnumpy[0m==2.5.4
+[1mopencv-python-headless[0m==5.0.0.93
+[1mpandas[0m==2.3.3
+[1mpyarrow[0m==26.0.1
+[1mpyasn1[0m==0.6.5
+[1mpyasn1-modules[0m==0.4.2
+[1mpycparser[0m==3.12
+[1mpython-dateutil[0m==4.0.0
+[1mpytz[0m==2026.6
+[1mtzdata[0m==2026.6
