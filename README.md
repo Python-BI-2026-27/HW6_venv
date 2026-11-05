@@ -45,7 +45,7 @@ The script imports `Bio.SubsMat.MatrixInfo`, which is restored from Biopython 1.
 ```Bash
 cp -R legacy_dir/SubsMat "$CONDA_PREFIX/lib/python3.14/site-packages/Bio/"
 ```
-Keep Biopython 1.88 installed. Only the missing `Subsmat` directory is added.
+Keep Biopython 1.88 installed. Only the missing `SubsMat` directory is added.
 
 ## 4. Fix pandas indexing 
 Open the installed `frame.py` in a text editor. For example, with Nano:
