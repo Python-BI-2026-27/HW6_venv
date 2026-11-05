@@ -1,0 +1,10 @@
+name: hw6_working
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.14
+  - pandas
+  - pyarrow
+  - google-api-python-client
+  - opencv
