@@ -1,0 +1,14 @@
+name: pain
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.14
+  - pip
+  - pandas
+  - pyarrow
+  - opencv
+  - biopython
+  - pip:
+      - google-api-core==2.43.2
