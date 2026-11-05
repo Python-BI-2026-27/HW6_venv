@@ -1,0 +1,11 @@
+name: pain_env
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.14
+  - pandas=2.3.3
+  - protobuf=7.35.1
+  - opencv=5.0.0
+  - biopython=1.88
+  - pyarrow=26.0.0
