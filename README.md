@@ -2,8 +2,8 @@
 ## Operating System
 The code was tested in **Ubuntu on Windows Subsystem for Linux (WSL)**.
 ## Requirements
-*Conda
-*Python 3.14
+-Conda
+-Python 3.14
 ## Installation
 1. Create a Conda environment
 2. Activate the environment
@@ -19,8 +19,8 @@ The script uses Bio.SubsMat, which is not included in recent Biopython versions.
 1. Create the required directory `mkdir -p "$CONDA_PREFIX/lib/python3.14/site-packages/Bio/SubsMat"`
 2. Create the MatrixInfo.py file `nano "$CONDA_PREFIX/lib/python3.14/site-packages/Bio/SubsMat/MatrixInfo.py"`
 3. Add the following code:
-```from Bio.Align import substitution_matrices
-blosum62 = substitution_matrices.load("BLOSUM62")```
+`from Bio.Align import substitution_matrices
+blosum62 = substitution_matrices.load("BLOSUM62")`
 4. Save the file by pressing Ctrl + O, then Enter, and exit with Ctrl + X.
 ## Run
 `python pain.py`
