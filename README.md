@@ -92,5 +92,5 @@ python pain.py
 ```
 
 ## Part 2
-
+Photo with friends from a desert in Abu Dhabi
 ![Photo with friends from a desert in Abu Dhabi](photo.jpeg)
