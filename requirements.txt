@@ -1,0 +1,5 @@
+pandas==2.3.3
+pyarrow==26.0.1
+biopython==1.88
+opencv-python-headless==5.0.0.93
+protobuf==7.36.2
