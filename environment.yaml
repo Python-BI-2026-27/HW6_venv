@@ -1,0 +1,10 @@
+name: hw6_venv
+channels:
+  - conda-forge
+dependencies:
+  - python=3.14
+  - pandas
+  - google-auth
+  - opencv=5.0.0
+  - biopython=1.88
+  - pyarrow>=16.0.0
