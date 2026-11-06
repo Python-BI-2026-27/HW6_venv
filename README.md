@@ -23,19 +23,20 @@ mamba install -c conda-forge pandas opencv biopython
 pip install google-genai
 pip install pyarrow
 ```
-6. Open folder site-packages/Bio (you can check the full path with this command): 
+6. Find the path to the Bio folder (remove /__init__.py from the output): 
 ``` bash
-python -c "import Bio; print(Bio)"
+python -c "import importlib.util; spec = importlib.util.find_spec('Bio'); print(spec.origin)"
 ```
-8. Create a folder with name - `SubsMat` in the folder site-packages
-7. Add an empty __init__.py and MatrixInfo.py in the folder
-8. Add sitecustomize.py in site-packages (in envs, command for full path is below)
+7. Create a folder with name - `SubsMat` in the folder Bio
+8. Add an empty __init__.py and MatrixInfo.py in SubsMat folder
+9. Add sitecustomize.py in site-packages (in envs, command for full path is below)
 ``` bash
 python -c "import site; print(site.getsitepackages()[0])"
 ```
-9. I hope that after that you can only type `python pain.py` in commandline to run the script. (You need to do in from the folder, where your 'pain' located OR to write the full path. 
+10. I hope that after that you can only type `python pain.py` in commandline to run the script. (You need to do in from the folder, where your 'pain' located OR to write the full path. 
 For example: `python ~/bioinf/Python/HW_6_venv). If everything OK, you will see that you are cool =)
 
+P.S: After all I realised that it also works without __init__.py in SubsMat=))
 
 Phew, now for the whole point of all this: REST.
 I had a long break last week (so it’s a huge relief that you moved the deadline!). I was in Canada, 
